@@ -452,6 +452,7 @@ bool journal_t::remove_xact(xact_t * xact)
 
 std::size_t journal_t::read(parse_context_stack_t& context)
 {
+  xacts.clear();
   std::size_t count = 0;
   try {
     parse_context_t& current(context.get_current());
